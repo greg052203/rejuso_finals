@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+
+         {% if messages %}
+            <div class="mb-4">
+                {% for message in messages %}
+                    <div class="p-3 rounded text-white {% if message.tags == 'success' %}bg-green-500{% elif message.tags == 'error' %}bg-red-500{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <h2 class="text-2xl font-bold text-center mb-6 text-gray-700">Create Your Account</h2>
+        <form method="post" class="space-y-4">
+            {% csrf_token %}
+            <div>
+                {{ form.username.label_tag }}
+                {{ form.username }}
+                {% if form.username.errors %}
+                    <p class="text-sm text-red-500">{{ form.username.errors }}</p>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.password1.label_tag }}
+                {{ form.password1 }}
+                {% if form.password1.errors %}
+                    <p class="text-sm text-red-500">{{ form.password1.errors }}</p>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.password2.label_tag }}
+                {{ form.password2 }}
+                {% if form.password2.errors %}
+                    <p class="text-sm text-red-500">{{ form.password2.errors }}</p>
+                {% endif %}
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 rounded hover:bg-blue-700 transition duration-300">
+                Sign Up
+            </button>
+        </form>
+        <p class="text-center text-gray-600 mt-6">
+            Already have an account?
+            <a href="{% url 'login' %}" class="text-blue-600 hover:underline">Log in here</a>.
+        </p>
+    </div>
+</body>
+</html>

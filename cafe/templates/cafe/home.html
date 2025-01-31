@@ -1,0 +1,29 @@
+{% extends 'cafe/base.html' %}
+{%load static%}
+{% block content %}
+
+<div class="hero">
+    <div class="hero-text">
+        <h1>Welcome to Ring and Wing Cafe</h1>
+        <p>Enjoy the best coffee, tea, and unlimited wings here!</p>
+        <a href="{% url 'menu' %}" class="btn">Explore Menu</a>
+    </div>
+</div>
+<div class="features">
+    <h2>Why Choose Us?</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <h3>Fresh Coffee</h3>
+            <p>Handpicked beans brewed to perfection.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Unlimited Wings</h3>
+            <p>All-you-can-eat wings with your favorite flavors.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Relaxing Ambience</h3>
+            <p>The perfect place to unwind and recharge.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

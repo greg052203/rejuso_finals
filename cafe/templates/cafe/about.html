@@ -1,0 +1,38 @@
+{% extends 'cafe/base.html' %}
+
+{% block title %}About Us{% endblock %}
+{% load static %}
+{% block content %}
+<div class="bg-gray-100 py-10">
+    <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="bg-gradient-to-r from-blue-500 to-blue-700 p-8 text-center">
+            <h1 class="text-4xl font-bold text-white">About Us</h1>
+        </div>
+        <div class="p-6 text-gray-700">
+            <p class="text-lg mb-4">
+                Welcome to <strong>Ring and Wing Cafe</strong>, your one-stop destination for the best coffee, milk tea, and unlimited wings in town!
+            </p>
+            <p class="mb-4">
+                Established with a passion for great food and a welcoming atmosphere, we pride ourselves on serving top-quality dishes and drinks crafted with the freshest ingredients. Whether you're catching up with friends, enjoying a quiet work session, or indulging in a meal with family, our cafe is the perfect spot.
+            </p>
+            <p class="mb-4">
+                Our team is dedicated to providing exceptional service and making your experience memorable every time you visit.
+            </p>
+        </div>
+        <div class="p-6 bg-gray-50 border-t border-gray-200 text-center">
+            <h2 class="text-2xl font-bold text-gray-700 mb-4">Why Choose Us?</h2>
+            <ul class="list-disc list-inside space-y-2 text-left max-w-md mx-auto">
+                <li>Locally-sourced, fresh ingredients</li>
+                <li>A wide variety of menu options</li>
+                <li>Cozy and inviting atmosphere</li>
+                <li>Friendly and attentive staff</li>
+                <li>Perfect venue for all occasions</li>
+            </ul>
+        </div>
+        <div class="p-6 text-center">
+            <img class="w-full max-w-md mx-auto rounded-lg shadow-md" src="{% static 'cafe/images/about_us.jpg' %}" alt="About Us Image">
+            <p class="text-gray-600 mt-4 italic">"Bringing people together, one cup and wing at a time."</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

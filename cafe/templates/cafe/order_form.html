@@ -1,0 +1,33 @@
+{% extends 'cafe/base.html' %}
+
+{% block content %}
+<h1>{% if form.instance.pk %}Edit Order{% else %}Create Order{% endif %}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="number" name="price" id="id_price" readonly>
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'order_list' %}">Back to Orders</a>
+
+<script>
+    const prices = {
+        "Smoked Bangus": 120.00,
+        "Breaded Liempo": 150.00,
+        "Longganisa": 100.00,
+        "Bites": 99.00,
+        "Tocino": 120.00,
+        "Porkchop": 125.00
+    };
+
+    function updatePrice() {
+        const item = document.getElementById('id_item').value;
+        const priceField = document.getElementById('id_price');
+        priceField.value = prices[item] || 0.00;
+    }
+
+    // Initialize price on page load
+    window.onload = updatePrice;
+</script>
+
+{% endblock %}

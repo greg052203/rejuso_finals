@@ -1,0 +1,68 @@
+{% extends 'cafe/base.html' %}
+{% load static %}
+{% block content %}
+<div class="menu-container">
+    <h1>Our Menu</h1>
+    <div class="menu-items">
+        <!-- Smoked Bangus -->
+        <div class="menu-item">
+            <a href="{% url 'order_create' %}?item=Smoked%20Bangus&price=99.00">
+                <img src="{% static 'images/bangus.jpg' %}" alt="Smoked Bangus" class="menu-item-image">
+            </a>
+            <h2>Smoked Bangus</h2>
+            <p>A delicious smoked fish dish.</p>
+            <p><strong>Price:</strong> P99.00</p>
+        </div>
+
+        <!-- Breaded Liempo -->
+        <div class="menu-item">
+            <a href="{% url 'order_create' %}?item=Breaded%20Liempo&price=250.00">
+                <img src="{% static 'images/liempo.jpg' %}" alt="Breaded Liempo" class="menu-item-image">
+            </a>
+            <h2>Breaded Liempo</h2>
+            <p>Crunchy and flavorful pork belly.</p>
+            <p><strong>Price:</strong> P250.00</p>
+        </div>
+
+        <!-- Longganisa -->
+        <div class="menu-item">
+            <a href="{% url 'order_create' %}?item=Longganisa&price=102.00">
+                <img src="{% static 'images/longganisa.jpg' %}" alt="Longganisa" class="menu-item-image">
+            </a>
+            <h2>Longganisa</h2>
+            <p>Classic Filipino sausage.</p>
+            <p><strong>Price:</strong> P102.00</p>
+        </div>
+
+        <!-- Bites -->
+        <div class="menu-item">
+            <a href="{% url 'order_create' %}?item=Bites&price=99.00">
+                <img src="{% static 'images/bites.jpg' %}" alt="Bites" class="menu-item-image">
+            </a>
+            <h2>Bites</h2>
+            <p>Perfectly seasoned bite-sized snacks.</p>
+            <p><strong>Price:</strong> P99.00</p>
+        </div>
+
+        <!-- Porkchop -->
+        <div class="menu-item">
+            <a href="{% url 'order_create' %}?item=Porkchop&price=125.00">
+                <img src="{% static 'images/porkchop.jpg' %}" alt="Porkchop" class="menu-item-image">
+            </a>
+            <h2>Porkchop</h2>
+            <p>Juicy and tender pork chop.</p>
+            <p><strong>Price:</strong> P125.00</p>
+        </div>
+
+        <!-- Tocino -->
+        <div class="menu-item">
+            <a href="{% url 'order_create' %}?item=Tocino&price=120.00">
+                <img src="{% static 'images/tocino.jpg' %}" alt="Tocino" class="menu-item-image">
+            </a>
+            <h2>Tocino</h2>
+            <p>Sweet and savory cured meat.</p>
+            <p><strong>Price:</strong> P120.00</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
